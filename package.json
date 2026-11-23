@@ -1,0 +1,59 @@
+{
+  "name": "dsh-turn-cost",
+  "version": "0.8.0",
+  "description": "Per-turn cost for DeepSeek Harness: prices every billed request with the model and the upstream provider that actually served it, and shows 本轮 ¥… under each turn plus a session total in the composer dock",
+  "type": "module",
+  "main": "lib/index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "icon.svg",
+    "install.ps1",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node test/run-tests.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cost",
+    "usage",
+    "pricing",
+    "openrouter",
+    "models.dev"
+  ],
+  "author": {
+    "name": "Lyqqt",
+    "url": "https://github.com/Lyqqt"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lyqqt/dsh-turn-cost.git"
+  },
+  "homepage": "https://github.com/Lyqqt/dsh-turn-cost#readme",
+  "bugs": {
+    "url": "https://github.com/Lyqqt/dsh-turn-cost/issues"
+  }
+}

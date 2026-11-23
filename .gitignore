@@ -1,0 +1,6 @@
+node_modules/
+test/real-book.json
+test/test-output.txt
+*.log
+*.bak-*
+.DS_Store

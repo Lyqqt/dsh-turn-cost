@@ -1,0 +1,24 @@
+# dsh-turn-cost bundle patch.
+#
+# Mounts the plugin once. Every field of the entry config is optional: the Host
+# `Config` schema supplies defaults (CNY display, built-in DeepSeek peak/off-peak
+# catalog, models.dev enabled).
+#
+# The entry id must stay "turn-cost": the browser half resolves the same config
+# through `ctx.configForms.get("turn-cost")`.
+#
+# Override any field from the profile's own cordis.patch.yml with an
+# id-targeted entry:
+#
+#   - id: turn-cost
+#     config:
+#       currency: CNY
+#       proxy: socks5://127.0.0.1:1080
+#       sources:
+#         modelsDev: true
+#         openrouter: true
+#       aliases:
+#         "@preset/ds41f-cheap": "openrouter|deepseek/deepseek-v4.1-flash"
+- insert:
+    - id: turn-cost
+      name: dsh-turn-cost
